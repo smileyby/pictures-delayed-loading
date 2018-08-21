@@ -9,13 +9,11 @@ var utils = function(){
         return "JSON" in window ? JSON.parse(str) : eval('('+ str +')');
     }
 
-    //=> 获取当前元素距离body的偏移量，包括左偏移和上便宜
+    //=> 获取当前元素距离body的偏移量，包括左偏移和上偏移
     var offset = function(curEle){
         var l = curEle.offsetLeft,
             t = curEle.offsetTop,
             p = curEle.offsetParent;
-        console.dir(curEle);
-        console.log(curEle.offsetParent);
         while(p.tagName !== 'BODY'){
             //=> 兼容IE8
             if(!/MSIE 8/i.test(navigator.userAgent)){
